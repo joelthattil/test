@@ -1,15 +1,15 @@
-// Simulated inbox data
+
 
 let inbox = [
     { id: 1, recipient: "john@example.com", subject: "Meeting Tomorrow", message: "Hi team, Just a reminder that we have a meeting scheduled for tomorrow at 10 AM. See you there!" },
     { id: 2, recipient: "jane@example.com", subject: "Project Update", message: "Hello everyone, I've completed the first phase of our project. Let's discuss the next steps during our meeting next week." }
 ];
 let dInbox=[
-    { id: 1, sender: "abcd@example.com",recipient:"raju" ,subject: "Meeting Tomorrow", message: "Hi team, Just a reminder that we have a meeting scheduled for tomorrow at 10 AM. See you there!" },
-    { id: 2, sender: "efg@example.com",recipient:"ramu", subject: "Project Update", message: "Hello everyone, I've completed the first phase of our project. Let's discuss the next steps during our meeting next week." }
+    { id: 1, recipient: "abcd@example.com",recipient:"raju" ,subject: "Meeting Tomorrow", message: "Hi team, Just a reminder that we have a meeting scheduled for tomorrow at 10 AM. See you there!" },
+    { id: 2, recipient: "efg@example.com",recipient:"ramu", subject: "Project Update", message: "Hello everyone, I've completed the first phase of our project. Let's discuss the next steps during our meeting next week." }
 ];
 
-// Function to display emails in the inbox
+
 function displayInbox() {
     var a=document.getElementById("b1")
     a.style.display="block"
@@ -32,7 +32,6 @@ function displayInbox() {
     
 }
 
-// Function to view a specific email
 function viewEmail(id) {
     const email = inbox.find(email => email.id === id);
     if (email) {
@@ -42,7 +41,6 @@ function viewEmail(id) {
     }
 }
 
-// Function to send an email
 function sendEmail() {
     const recipient = document.getElementById('recipient').value;
     const subject = document.getElementById('subject').value;
@@ -53,7 +51,7 @@ function sendEmail() {
         return;
     }
 
-    // Simulate sending email (in a real app, this would involve sending data to a server)
+
     const newEmail = {
         id: inbox.length + 1,
         recipient: recipient,
@@ -62,7 +60,7 @@ function sendEmail() {
     };
     inbox.push(newEmail);
 
-    // Clear form fields and update inbox
+    
     document.getElementById('recipient').value = '';
     document.getElementById('subject').value = '';
     document.getElementById('message').value = '';
@@ -131,5 +129,4 @@ function edit(id) {
         alert('Email not found!');
     }
 }
-// Display inbox on page load
 displayInbox();
